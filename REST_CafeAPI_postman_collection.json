@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "ba04b8cf-197f-4978-a13d-4478ac94d275",
+		"name": "REST_CafeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24975406"
+	},
+	"item": [
+		{
+			"name": "Post a Cafe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Seattle Cafe",
+							"type": "text"
+						},
+						{
+							"key": "map_url",
+							"value": "https://www.google.com/maps/place/TY+Seven+Dials/@51.5128761,-0.1295574,17z/data=!3m1!4b1!4m5!3m4!1s0x487604cd0ed11587:0x3feff9f93e76a986!8m2!3d51.5128761!4d-0.1273687?hl=en-GB",
+							"type": "text"
+						},
+						{
+							"key": "seats",
+							"value": "10-20",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "solo",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "11",
+							"type": "text"
+						},
+						{
+							"key": "img_url",
+							"value": "https://cdn.venuescanner.com/photos/qiUqV/aad7dea72a6fb6f3388ab27ba56b7740.jpg",
+							"type": "text"
+						},
+						{
+							"key": "loc",
+							"value": "Vietnam",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cafe By Searching Loaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "$6.80",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?loc=Vietnam",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "loc",
+							"value": "Vietnam"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Cafes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a random cafe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/random",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch a Cafe",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/update-price/5?new_price=$69.30",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"update-price",
+						"5"
+					],
+					"query": [
+						{
+							"key": "new_price",
+							"value": "$69.30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a Cafe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/report-closed/4?api-key=TopSecretAPIKey",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"report-closed",
+						"4"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "TopSecretAPIKey"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
