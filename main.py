@@ -1,4 +1,3 @@
-import json
 import random
 
 from flask import Flask, jsonify, render_template, request
@@ -38,7 +37,7 @@ def home():
     return render_template("index.html")
 
 
-# HTTP GET - Read Record for Particular
+# HTTP GET - Read Record for Random
 @app.route("/random")
 def get_random_cafe():
     cafes = db.session.query(Cafe).all()
@@ -57,7 +56,7 @@ def get_random_cafe():
         "coffee_price": random_cafe.coffee_price,
     })
 
-
+# HTTP GET - Read all records
 @app.route("/all")
 def get_all_cafe():
     cafes = db.session.query(Cafe).all()
@@ -68,6 +67,7 @@ def get_all_cafe():
     return jsonify(list_cafes)
 
 
+# HTTP GET - Read Record for particular
 @app.route("/search")
 def get_searched_cafe():
     query_location = request.args.get("loc")
@@ -110,8 +110,8 @@ def update(cafe_id):
     else:
         return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."})
 
-## HTTP DELETE - Delete Record
 
+# HTTP DELETE - Delete a record of particular
 @app.route("/report-closed/<int:cafe_id>", methods=["DELETE"])
 def delete_cafe(cafe_id):
     api_key = request.args.get("api-key")
